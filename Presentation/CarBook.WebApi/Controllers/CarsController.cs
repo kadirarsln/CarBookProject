@@ -68,9 +68,9 @@ namespace CarBook.WebApi.Controllers
         }
 
         [HttpGet("GetCarWithBrand")]
-        public async Task<IActionResult> GetCarWithBrand(int id)
+        public IActionResult GetCarWithBrand(int id)
         {
-            var values = await _getCarWithBrandQueryHandler.Handle();
+            var values = _getCarWithBrandQueryHandler.Handle();
             return Ok(values);
         }
     }
