@@ -15,18 +15,21 @@ namespace CarBook.WebApi.Controllers
         private readonly GetCarQueryHandler _getCarQueryHandler;
         private readonly UpdateCarCommandHandler _updateCarComandHandler;
         private readonly RemoveCarCommandHandler _removeCarCommandHandler;
+        private readonly GetCarWithBrandQueryHandler _getCarWithBrandQueryHandler;
 
         public CarsController(CreateCarCommandHandler createCarCommandHandler,
             GetCarByIdQueryHandler getCarByIdQueryHandler,
             GetCarQueryHandler getCarQueryHandler,
             UpdateCarCommandHandler updateCarComandHandler,
-            RemoveCarCommandHandler removeCarCommandHandler)
+            RemoveCarCommandHandler removeCarCommandHandler,
+            GetCarWithBrandQueryHandler getCarWithBrandQueryHandler)
         {
             _createCarCommandHandler = createCarCommandHandler;
             _getCarByIdQueryHandler = getCarByIdQueryHandler;
             _getCarQueryHandler = getCarQueryHandler;
             _updateCarComandHandler = updateCarComandHandler;
             _removeCarCommandHandler = removeCarCommandHandler;
+            _getCarWithBrandQueryHandler = getCarWithBrandQueryHandler;
         }
 
         [HttpGet]
@@ -62,6 +65,13 @@ namespace CarBook.WebApi.Controllers
         {
             await _updateCarComandHandler.Handle(command);
             return Ok("Araba Bilgisi Güncellendi");
+        }
+
+        [HttpGet("GetCarWithBrand")]
+        public async Task<IActionResult> GetCarWithBrand(int id)
+        {
+            var values = await _getCarWithBrandQueryHandler.Handle();
+            return Ok(values);
         }
     }
 }
