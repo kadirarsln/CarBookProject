@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using CarBookProject.Application.Features.Mediator.Commands.LocationCommand;
-using CarBookProject.Application.Features.Mediator.Queries.LocationQuery;
+using CarBook.Application.Features.Mediator.Commands.LocationCommand;
+using CarBook.Application.Features.Mediator.Queries.LocationQuery;
 
-namespace CarBookProject.WebApi.Controllers
+namespace CarBook.WebApi.Controllers
 {
-    [Authorize(Roles = "Admin")]
+
     [Route("api/[controller]")]
     [ApiController]
     public class LocationsController : ControllerBase

@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CarBookProject.Application.Features.Mediator.Queries.LocationQuery;
-using CarBookProject.Application.Features.Mediator.Results.LocationResult;
+using CarBook.Application.Features.Mediator.Queries.LocationQuery;
+using CarBook.Application.Features.Mediator.Results.LocationResult;
 using CarBook.Domain.Entities;
 using CarBook.Application.Interfaces;
 
-namespace CarBookProject.Application.Features.Mediator.Handlers.LocationHandler
+namespace CarBook.Application.Features.Mediator.Handlers.LocationHandler
 {
     public class GetServiceQueryHandler : IRequestHandler<GetLocationQuery, List<GetLocationQueryResult>>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Application.Features.Mediator.Commands.LocationCommand
+namespace CarBook.Application.Features.Mediator.Commands.LocationCommand
 {
     public class CreateLocationCommand:IRequest
     {
