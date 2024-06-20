@@ -68,7 +68,7 @@ namespace CarBook.WebApi.Controllers
         }
 
         [HttpGet("GetCarWithBrand")]
-        public IActionResult GetCarWithBrand(int id)
+        public IActionResult GetCarWithBrand()
         {
             var values = _getCarWithBrandQueryHandler.Handle();
             return Ok(values);
