@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Dto.ServiceDtos
+namespace CarBook.Dto.BannerDtos
 {
-    public class CreateServiceDto
+    public class ResultBannerDto
     {
+        public int BannerID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string IconUrl { get; set; }
+        public string VideoDescription { get; set; }
+        public string VideoUrl { get; set; }
     }
 }
