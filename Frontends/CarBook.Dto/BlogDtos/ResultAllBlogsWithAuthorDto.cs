@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UdemyCarBook.Dto.BlogDtos
+namespace CarBook.Dto.BlogDtos
 {
     public class ResultAllBlogsWithAuthorDto
     {
@@ -17,8 +17,8 @@ namespace UdemyCarBook.Dto.BlogDtos
         public DateTime createdDate { get; set; }
         public int categoryID { get; set; }
         public string Description { get; set; }
-        public string AuthorDescription { get; set; }
-        public string AuthorImageUrl { get; set; }
+        //public string AuthorDescription { get; set; }
+        //public string AuthorImageUrl { get; set; }
     }
 
 }
