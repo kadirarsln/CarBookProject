@@ -19,14 +19,14 @@ namespace CarBook.WebApi.Controllers
         private readonly GetLast5CarsWithBrandQueryHandler _getLast5CarsWithBrandQueryHandler;
 
 
-
         public CarsController(CreateCarCommandHandler createCarCommandHandler,
             GetCarByIdQueryHandler getCarByIdQueryHandler,
             GetCarQueryHandler getCarQueryHandler,
             UpdateCarCommandHandler updateCarComandHandler,
             RemoveCarCommandHandler removeCarCommandHandler,
             GetCarWithBrandQueryHandler getCarWithBrandQueryHandler,
-            GetLast5CarsWithBrandQueryHandler getLast5CarsWithBrandQueryHandler)
+            GetLast5CarsWithBrandQueryHandler getLast5CarsWithBrandQueryHandler
+           )
         {
             _createCarCommandHandler = createCarCommandHandler;
             _getCarByIdQueryHandler = getCarByIdQueryHandler;
@@ -35,6 +35,7 @@ namespace CarBook.WebApi.Controllers
             _removeCarCommandHandler = removeCarCommandHandler;
             _getCarWithBrandQueryHandler = getCarWithBrandQueryHandler;
             _getLast5CarsWithBrandQueryHandler = getLast5CarsWithBrandQueryHandler;
+
         }
 
         [HttpGet]
@@ -84,5 +85,6 @@ namespace CarBook.WebApi.Controllers
             var values = _getLast5CarsWithBrandQueryHandler.Handle();
             return Ok(values);
         }
+
     }
 }
