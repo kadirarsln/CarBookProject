@@ -1,7 +1,8 @@
-﻿@*
+﻿@model List<CarBook.Dto.TagCloudDtos.GetByBlogIdTagCloudDto>
+
+@*
     _BlogDetailCloudTagByBlogComponentPartial
 *@
-@* @model List<UdemyCarBook.Dto.TagCloudDtos.GetByBlogIdTagCloudDto>
 <div class="tag-widget post-tag-container mb-5 mt-5">
     <div class="tagcloud">
         @foreach (var item in Model)
@@ -9,4 +10,4 @@
             <a href="#" class="tag-cloud-link">@item.Title</a>
         }
     </div>
-</div> *@
+</div> 

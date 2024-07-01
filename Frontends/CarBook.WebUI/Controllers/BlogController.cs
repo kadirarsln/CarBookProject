@@ -30,7 +30,7 @@ namespace CarBook.WebUI.Controllers
         {
             ViewBag.v1 = "Bloglar";
             ViewBag.v2 = "Blog Detayı & Yorumlar";
-            //ViewBag.blogid = id;
+            ViewBag.blogid = id;
 
             //var client = _httpClientFactory.CreateClient();
             //var responseMessage2 = await client.GetAsync($"https://localhost:7060/api/Comments/CommentCountByBlog?id=" + id);
