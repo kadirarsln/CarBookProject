@@ -27,7 +27,7 @@ namespace CarBook.WebApi.Controllers
 
         [HttpPost]
         public IActionResult CreateComment(Comment comment)
-        {           
+        {
             _commentsRepository.Create(comment);
             return Ok("Yorum başarıyla eklendi");
         }
@@ -44,7 +44,7 @@ namespace CarBook.WebApi.Controllers
         public IActionResult UpdateComment(Comment comment)
         {
             _commentsRepository.Update(comment);
-            return Ok("Yorum başarıyla GÜNCELLENDİ");
+            return Ok("Yorum başarıyla güncellendi");
         }
 
         [HttpGet("{id}")]
@@ -64,7 +64,7 @@ namespace CarBook.WebApi.Controllers
         //[HttpGet("CommentCountByBlog")]
         //public IActionResult CommentCountByBlog(int id)
         //{
-        //    var value=_commentsRepository.GetCountCommentByBlog(id);
+        //    var value = _commentsRepository.GetCountCommentByBlog(id);
         //    return Ok(value);
         //}
 

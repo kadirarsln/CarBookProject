@@ -39,7 +39,7 @@ namespace CarBook.WebApi.Controllers
             return Ok("Özellikler Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveFeature(int id)
         {
             await _mediator.Send(new RemoveFeatureCommand(id));
