@@ -5,15 +5,15 @@
 //using System.Linq;
 //using System.Text;
 //using System.Threading.Tasks;
-//using UdemyCarBook.Application.Features.Mediator.Queries.BlogQueries;
-//using UdemyCarBook.Application.Features.Mediator.Queries.CarPricingQueries;
-//using UdemyCarBook.Application.Features.Mediator.Results.BlogResults;
-//using UdemyCarBook.Application.Features.Mediator.Results.CarPricingResults;
-//using UdemyCarBook.Application.Interfaces.BlogInterfaces;
-//using UdemyCarBook.Application.Interfaces.CarPricingInterfaces;
-//using UdemyCarBook.Domain.Entities;
+//using CarBook.Application.Features.Mediator.Queries.BlogQueries;
+//using CarBook.Application.Features.Mediator.Queries.CarPricingQueries;
+//using CarBook.Application.Features.Mediator.Results.BlogResults;
+//using CarBook.Application.Features.Mediator.Results.CarPricingResults;
+//using CarBook.Application.Interfaces.BlogInterfaces;
+//using CarBook.Application.Interfaces.CarPricingInterfaces;
+//using CarBook.Domain.Entities;
 
-//namespace UdemyCarBook.Application.Features.Mediator.Handlers.CarPricingHandlers
+//namespace CarBook.Application.Features.Mediator.Handlers.CarPricingHandlers
 //{
 //    public class GetCarPricingWithTimePeriodQueryHandler : IRequestHandler<GetCarPricingWithTimePeriodQuery, List<GetCarPricingWithTimePeriodQueryResult>>
 //    {
