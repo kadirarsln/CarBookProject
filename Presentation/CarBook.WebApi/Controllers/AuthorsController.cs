@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using CarBook.Application.Features.Mediator.Commands.AuthorCommands;
 using CarBook.Application.Features.Mediator.Queries.AuthorQueries;
 
-namespace UdemyCarBook.WebApi.Controllers
+namespace CarBook.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
