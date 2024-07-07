@@ -86,7 +86,7 @@ namespace CarBook.Persistence.Repositories.StatisticsRepositories
         public string GetCarBrandAndModelByRentPriceDailyMax()
         {
             //Select * From CarPricings where Amount=(Select Max(Amount) From CarPricings where PricingID=3)
-            int pricingID = _context.Pricings.Where(x => x.PricingName == "Günlük").Select(y => y.PricingID).FirstOrDefault();
+            int pricingID = _context.Pricings.Where(x => x.PricingName == "Günlük").Select(y => y.PricingID).FirstOrDefault(); //id günlük olarak revize edildi.
             decimal amount = _context.CarPricings.Where(y => y.PricingID == pricingID).Max(x => x.Amount);
             int carId = _context.CarPricings.Where(x => x.Amount == amount).Select(y => y.CarID).FirstOrDefault();
             string brandModel = _context.Cars.Where(x => x.CarID == carId).Include(y => y.Brand).Select(z => z.Brand.Name + " " + z.Model).FirstOrDefault();

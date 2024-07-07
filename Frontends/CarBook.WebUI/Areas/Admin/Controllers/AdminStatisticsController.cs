@@ -46,7 +46,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik3
-            var responseMessage3 = await client.GetAsync("https://localhost:7060/api/Statistics/GetAuthorCount");
+            var responseMessage3 = await client.GetAsync("https://localhost:7203/api/Statistics/GetAuthorCount");
             if (responseMessage3.IsSuccessStatusCode)
             {
                 int authorCountRandom = random.Next(0, 101);
@@ -58,7 +58,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik4
-            var responseMessage4 = await client.GetAsync("https://localhost:7060/api/Statistics/GetBlogCount");
+            var responseMessage4 = await client.GetAsync("https://localhost:7203/api/Statistics/GetBlogCount");
             if (responseMessage4.IsSuccessStatusCode)
             {
                 int blogCountRandom = random.Next(0, 101);
@@ -70,7 +70,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik5
-            var responseMessage5 = await client.GetAsync("https://localhost:7060/api/Statistics/GetBrandCount");
+            var responseMessage5 = await client.GetAsync("https://localhost:7203/api/Statistics/GetBrandCount");
             if (responseMessage5.IsSuccessStatusCode)
             {
                 int brandCountRandom = random.Next(0, 101);
@@ -82,7 +82,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik6
-            var responseMessage6 = await client.GetAsync("https://localhost:7060/api/Statistics/GetAvgRentPriceForDaily");
+            var responseMessage6 = await client.GetAsync("https://localhost:7203/api/Statistics/GetAvgRentPriceForDaily");
             if (responseMessage6.IsSuccessStatusCode)
             {
                 int avgRentPriceForDailyRandom = random.Next(0, 101);
@@ -94,7 +94,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik7
-            var responseMessage7 = await client.GetAsync("https://localhost:7060/api/Statistics/GetAvgRentPriceForWeekly");
+            var responseMessage7 = await client.GetAsync("https://localhost:7203/api/Statistics/GetAvgRentPriceForWeekly");
             if (responseMessage7.IsSuccessStatusCode)
             {
                 int avgRentPriceForWeeklyRandom = random.Next(0, 101);
@@ -106,7 +106,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik8
-            var responseMessage8 = await client.GetAsync("https://localhost:7060/api/Statistics/GetAvgRentPriceForMonthly");
+            var responseMessage8 = await client.GetAsync("https://localhost:7203/api/Statistics/GetAvgRentPriceForMonthly");
             if (responseMessage8.IsSuccessStatusCode)
             {
                 int avgRentPriceForMonthlyRandom = random.Next(0, 101);
@@ -118,7 +118,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik9
-            var responseMessage9 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarCountByTranmissionIsAuto");
+            var responseMessage9 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarCountByTranmissionIsAuto");
             if (responseMessage9.IsSuccessStatusCode)
             {
                 int carCountByTranmissionIsAutoRandom = random.Next(0, 101);
@@ -130,7 +130,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik10
-            var responseMessage10 = await client.GetAsync("https://localhost:7060/api/Statistics/GetBrandNameByMaxCar");
+            var responseMessage10 = await client.GetAsync("https://localhost:7203/api/Statistics/GetBrandNameByMaxCar");
             if (responseMessage10.IsSuccessStatusCode)
             {
                 int brandNameByMaxCarRandom = random.Next(0, 101);
@@ -142,7 +142,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik11
-            var responseMessage11 = await client.GetAsync("https://localhost:7060/api/Statistics/GetBlogTitleByMaxBlogComment");
+            var responseMessage11 = await client.GetAsync("https://localhost:7203/api/Statistics/GetBlogTitleByMaxBlogComment");
             if (responseMessage11.IsSuccessStatusCode)
             {
                 int blogTitleByMaxBlogCommentRandom = random.Next(0, 101);
@@ -154,7 +154,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik12
-            var responseMessage12 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarCountByKmSmallerThen1000");
+            var responseMessage12 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarCountByKmSmallerThen1000");
             if (responseMessage12.IsSuccessStatusCode)
             {
                 int carCountByKmSmallerThen1000Random = random.Next(0, 101);
@@ -166,7 +166,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik13
-            var responseMessage13 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarCountByFuelGasolineOrDiesel");
+            var responseMessage13 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarCountByFuelGasolineOrDiesel");
             if (responseMessage13.IsSuccessStatusCode)
             {
                 int carCountByFuelGasolineOrDieselRandom = random.Next(0, 101);
@@ -178,7 +178,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik14
-            var responseMessage14 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarCountByFuelElectric");
+            var responseMessage14 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarCountByFuelElectric");
             if (responseMessage14.IsSuccessStatusCode)
             {
                 int carCountByFuelElectricRandom = random.Next(0, 101);
@@ -190,7 +190,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik15
-            var responseMessage15 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarBrandAndModelByRentPriceDailyMax");
+            var responseMessage15 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarBrandAndModelByRentPriceDailyMax");
             if (responseMessage15.IsSuccessStatusCode)
             {
                 int carBrandAndModelByRentPriceDailyMaxRandom = random.Next(0, 101);
@@ -202,7 +202,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #endregion
 
             #region İstatistik16
-            var responseMessage16 = await client.GetAsync("https://localhost:7060/api/Statistics/GetCarBrandAndModelByRentPriceDailyMin");
+            var responseMessage16 = await client.GetAsync("https://localhost:7203/api/Statistics/GetCarBrandAndModelByRentPriceDailyMin");
             if (responseMessage16.IsSuccessStatusCode)
             {
                 int carBrandAndModelByRentPriceDailyMinRandom = random.Next(0, 101);
