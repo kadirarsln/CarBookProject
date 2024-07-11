@@ -7,7 +7,7 @@ using CarBook.Dto.LocationDtos;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("Admin/AdminLocation")]
     public class AdminLocationController : Controller
@@ -21,11 +21,11 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
         [Route("AdminLocationIndex")]
         public async Task<IActionResult> AdminLocationIndex()
         {
-            //var token = User.Claims.FirstOrDefault(x => x.Type == "carbooktoken")?.Value;
-            //if (token != null)
-            //{
+            var token = User.Claims.FirstOrDefault(x => x.Type == "carbooktoken")?.Value;
+            if (token != null)
+            {
             var client = _httpClientFactory.CreateClient();
-            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var responseMessage = await client.GetAsync("https://localhost:7203/api/Locations");
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -33,7 +33,7 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
                 var values = JsonConvert.DeserializeObject<List<ResultLocationDto>>(jsonData);
                 return View(values);
             }
-            //}
+            }
             return View();
 
         }

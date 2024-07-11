@@ -7,7 +7,7 @@ using CarBook.Application.Features.Mediator.Queries.LocationQuery;
 
 namespace CarBook.WebApi.Controllers
 {
-
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class LocationsController : ControllerBase

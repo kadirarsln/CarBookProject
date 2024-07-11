@@ -16,6 +16,7 @@ using CarBook.Application.Interfaces.ReviewInterfaces;
 using CarBook.Application.Interfaces.StatisticsInterfaces;
 using CarBook.Application.Interfaces.TagCloudInterfaces;
 using CarBook.Application.Services;
+using CarBook.Application.Tools;
 using CarBook.Domain.Entities;
 using CarBook.Persistance.Context;
 using CarBook.Persistance.Repositories;
@@ -29,10 +30,40 @@ using CarBook.Persistence.Repositories.RentACarRepositories;
 using CarBook.Persistence.Repositories.ReviewRepositories;
 using CarBook.Persistence.Repositories.StatisticsRepositories;
 using CarBook.Persistence.Repositories.TagCloudRepositories;
+using CarBook.WebApi.Hubs;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.AllowAnyHeader()
+        .AllowAnyMethod()
+        .SetIsOriginAllowed((host) => true)
+        .AllowCredentials();
+    });
+});
+builder.Services.AddSignalR();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+	opt.RequireHttpsMetadata = false;
+	opt.TokenValidationParameters = new TokenValidationParameters
+	{
+		ValidAudience = JwtTokenDefaults.ValidAudience,
+		ValidIssuer = JwtTokenDefaults.ValidIssuer,
+		ClockSkew = TimeSpan.Zero,
+		IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key)),
+		ValidateLifetime = true,
+		ValidateIssuerSigningKey = true
+	};
+}); ;
 
 // Add services to the container.
 builder.Services.AddScoped<CarBookContext>();
@@ -107,11 +138,12 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<CarHub>("/carhub");
 app.Run();
