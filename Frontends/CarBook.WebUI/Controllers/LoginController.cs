@@ -56,7 +56,7 @@ namespace CarBook.WebUI.Controllers
                         };
 
                         await HttpContext.SignInAsync(JwtBearerDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProps);
-                        return RedirectToAction("Index", "Default");
+                        return RedirectToAction("AdminDashboardIndex", "AdminDashboard", new { area = "Admin" });
                     }
                 }
             }

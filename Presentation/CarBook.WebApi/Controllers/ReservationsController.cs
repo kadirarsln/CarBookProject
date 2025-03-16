@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CarBook.Application.Features.Mediator.Commands.ReservationCommands;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CarBook.WebApi.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class ReservationsController : ControllerBase

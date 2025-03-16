@@ -1,7 +1,7 @@
 ﻿@* _CarDetailCarFeatureByCarIdComponentPartial *@
 
 @model List<ResultCarFeatureByCarIdDto>
-<div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+<@* div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
     <div class="row">
 
         <div class="col-md-4">
@@ -21,6 +21,24 @@
         </div>
 
     </div>
+</div> *@
+<div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+    <div class="row">
+        @for (var i = 0; i < Model.Count; i += 4)
+        {
+                <div class="col-md-4">
+                    <ul class="features">
+                    @for (var j = i; j < i + 4 && j < Model.Count; j++)
+                    {
+                        var item = Model[j];
+                                <li class="@(item.Available ? "check" : "remove")"><span class="ion-ios-checkmark"></span>@item.FeatureName</li>
+                    }
+                    </ul>
+                </div>
+        }
+    </div>
 </div>
+
+
 
 

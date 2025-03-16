@@ -7,7 +7,7 @@ using CarBook.Dto.LocationDtos;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("Admin/AdminLocation")]
     public class AdminLocationController : Controller
